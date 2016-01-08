@@ -106,7 +106,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, {
 	    key: 'componentDidUpdate',
 	    value: function componentDidUpdate() {
-	      if (!this.state.visible) this.onWindowScroll();
+	      if (!this.state.visible) {
+	        this.onWindowScroll();
+	      } else {
+	        var onContentVisible = this.props.onContentVisible;
+
+	        if (onContentVisible) {
+	          onContentVisible();
+	        }
+	      }
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
@@ -161,7 +169,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	LazyLoad.propTypes = {
 	  children: _react.PropTypes.node.isRequired,
 	  height: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number]),
-	  threshold: _react.PropTypes.number
+	  threshold: _react.PropTypes.number,
+	  onContentVisible: _react.PropTypes.func
 	};
 	LazyLoad.defaultProps = {
 	  threshold: 0
