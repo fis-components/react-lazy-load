@@ -1,0 +1,15 @@
+{
+    "name": "react-lazy-load",
+    "description": "Simple lazy loading component built with react",
+    "repos": "https://github.com/loktar00/react-lazy-load.git",
+    "main": "LazyLoad.js",
+    "tag": "master",
+    "reposType": "npm",
+    "dependencies": {
+        "react": "^0.14.0"
+    },
+    "paths": {
+        "dist": "."
+    },
+    "version": "2.0.2"
+}
