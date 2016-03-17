@@ -308,11 +308,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var parent = element;
 
 	  while (parent) {
-	    if (!parent.parentNode) {
-	      return window;
+	    if (parent === document.body || parent === document.documentElement) {
+	      break;
 	    }
 
-	    if (parent !== document.body && /(scroll|auto)/.test(overflow(parent))) {
+	    if (!parent.parentNode) {
+	      break;
+	    }
+
+	    if (/(scroll|auto)/.test(overflow(parent))) {
 	      return parent;
 	    }
 
